@@ -1,13 +1,34 @@
 {
   "name": "ggtx-react",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "author": "Matt Oliver",
   "license": "MIT",
   "main": "lib/index.js",
   "module": "lib-esm/index.js",
+  "exports": {
+    ".": {
+      "node": "./lib/index.js",
+      "require": "./lib/index.js",
+      "default": "./lib-esm/index.js"
+    },
+    "./lib-esm/*": {
+      "node": [
+        "./lib/*.js",
+        "./lib/*/index.js"
+      ],
+      "default": [
+        "./lib-esm/*.js",
+        "./lib-esm/*/index.js"
+      ]
+    }
+  },
   "types": "lib/index.d.ts",
   "sideEffects": false,
   "devDependencies": {
+    "@babel/core": "^7.18.9",
+    "@babel/preset-env": "^7.18.9",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
     "@rollup/plugin-commonjs": "19.0.2",
     "@rollup/plugin-node-resolve": "13.0.5",
     "@storybook/addon-actions": "^6.5.9",

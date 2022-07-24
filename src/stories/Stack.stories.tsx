@@ -21,13 +21,13 @@ export const stack = (args: StackProps) => {
       width={args.width}
     >
       <div
-        style={{ backgroundColor: "tomato", width: "16px", height: "16px" }}
+        style={{ backgroundColor: "tomato", width: "250px", height: "48px" }}
       />
       <div
-        style={{ backgroundColor: "tomato", width: "16px", height: "16px" }}
+        style={{ backgroundColor: "tomato", width: "250px", height: "48px" }}
       />
       <div
-        style={{ backgroundColor: "tomato", width: "16px", height: "16px" }}
+        style={{ backgroundColor: "tomato", width: "250px", height: "48px" }}
       />
     </Stack>
   );

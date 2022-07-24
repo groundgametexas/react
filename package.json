@@ -1,10 +1,42 @@
 {
   "name": "ggtx-react",
   "version": "1.0.0",
-  "main": "index.js",
   "author": "Matt Oliver",
   "license": "MIT",
+  "main": "lib/index.js",
+  "module": "lib-esm/index.js",
+  "types": "lib/index.d.ts",
+  "sideEffects": false,
   "devDependencies": {
+    "@rollup/plugin-commonjs": "19.0.2",
+    "@rollup/plugin-node-resolve": "13.0.5",
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-interactions": "^6.5.9",
+    "@storybook/addon-links": "^6.5.9",
+    "@storybook/builder-webpack4": "^6.5.9",
+    "@storybook/manager-webpack4": "^6.5.9",
+    "@storybook/react": "^6.5.9",
+    "@storybook/testing-library": "^0.0.13",
+    "@types/react": "^18.0.15",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "rollup": "2.60.2",
+    "rollup-plugin-babel": "4.4.0",
+    "rollup-plugin-terser": "7.0.2",
+    "rollup-plugin-visualizer": "5.5.2",
     "typescript": "^4.7.4"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "dependencies": {
+    "@stitches/react": "^1.2.8"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   }
 }

@@ -25,6 +25,7 @@
   "types": "lib/index.d.ts",
   "sideEffects": false,
   "devDependencies": {
+    "@babel/cli": "7.18.9",
     "@babel/core": "^7.18.9",
     "@babel/preset-env": "^7.18.9",
     "@babel/preset-react": "^7.18.6",
@@ -56,7 +57,7 @@
     "@stitches/react": "^1.2.8"
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "./script/build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   }

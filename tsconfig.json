@@ -14,8 +14,7 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "typeRoots": ["./node_modules/@types", "./@types"],
-    "exclude": ["node_modules", "./lib"]
+    "typeRoots": ["./node_modules/@types", "./@types"]
   },
   "include": [
     "@types/**/*.ts",
@@ -23,5 +22,6 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     "script/**/*.ts"
-  ]
+  ],
+  "exclude": ["node_modules", "./lib"]
 }

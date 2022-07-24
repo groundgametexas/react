@@ -24,6 +24,7 @@ export const box = (args: BoxProps) => {
         fontSize: 16,
         padding: 16,
       }}
+      as={args["as"]}
     >
       This is a box
     </Box>
@@ -33,7 +34,7 @@ box.argTypes = {
   ref: { table: { disable: true } },
   css: { table: { disable: true } },
   as: {
-    value: ["div", "ul", "span", "table", "h1", "p", "button"],
+    options: ["div", "ul", "span", "table", "h1", "h2", "h3", "p", "button"],
     control: {
       type: "select",
     },

@@ -4,6 +4,7 @@ node_modules
 .idea
 coverage/
 dist/
+lib
 lib/
 lib-esm/
 public/

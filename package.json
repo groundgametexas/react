@@ -69,6 +69,17 @@
     "@radix-ui/react-popover": "1.0.0",
     "@stitches/react": "^1.2.8"
   },
+  "files": [
+    "dist",
+    "lib",
+    "lib-esm",
+    "index.d.ts",
+    "drafts/package.json",
+    "!lib/__tests__",
+    "!lib/stories",
+    "!lib-esm/__tests__",
+    "!lib-esm/stories"
+  ],
   "size-limit": [
     {
       "path": "dist/browser.esm.js",

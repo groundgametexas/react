@@ -49,10 +49,6 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      # Build tokens
-      - name: Transform
-        run: yarn transform
-
       - name: Build
         run: yarn build
 

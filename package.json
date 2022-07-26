@@ -24,6 +24,12 @@
   },
   "types": "lib/index.d.ts",
   "sideEffects": false,
+  "scripts": {
+    "build": "./script/build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "release": "yarn build && changeset publish"
+  },
   "devDependencies": {
     "@babel/cli": "7.18.9",
     "@babel/core": "^7.18.9",
@@ -59,10 +65,5 @@
     "@radix-ui/react-icons": "^1.1.1",
     "@radix-ui/react-popover": "1.0.0",
     "@stitches/react": "^1.2.8"
-  },
-  "scripts": {
-    "build": "./script/build",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
   }
 }

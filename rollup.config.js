@@ -29,7 +29,6 @@ export default [
       globals: {
         react: "React",
         "react-dom": "ReactDOM",
-        "@stitches/react": "@stitches/react",
       },
     })),
   },

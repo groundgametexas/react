@@ -25,7 +25,7 @@ export default [
       file: `dist/browser.${format}.js`,
       format,
       sourcemap: true,
-      name: "primer",
+      name: "groundgametexas",
       globals: {
         react: "React",
         "react-dom": "ReactDOM",

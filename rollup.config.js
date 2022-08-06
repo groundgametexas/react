@@ -17,6 +17,7 @@ const plugins = [
     config: {
       path: "./postcss.config.js",
     },
+    extract: true,
     extensions: [".css"],
     minimize: true,
     inject: {

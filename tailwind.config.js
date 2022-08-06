@@ -3,7 +3,7 @@ module.exports = {
   mode: "jit",
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./stories/*"],
   content: [
-    "./components/**/*.{html,js}",
+    "./src/**/*.{html,js,jsx,tsx}",
     "./pages/**/*.{html,js}",
     "./node_modules/@groundgametexas/react/**/*.js",
   ],

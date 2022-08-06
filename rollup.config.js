@@ -24,6 +24,12 @@ const plugins = [
       insertAt: "top",
     },
   }),
+  tailwind({
+    input: "./tw.css", // required
+    // Tailor the emitted stylesheet to the bundle by removing any unused CSS
+    // (highly recommended when packaging for distribution).
+    purge: true,
+  }),
   babel({ extensions, exclude: "node_modules/**", runtimeHelpers: true }),
   commonjs(),
   terser(),

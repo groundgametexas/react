@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../tw.css";
 type ThingProps = {
   children: React.ReactNode;
 };

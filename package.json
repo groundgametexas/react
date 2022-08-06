@@ -30,8 +30,7 @@
     "release": "yarn build && changeset publish",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "size": "size-limit",
-    "release": "yarn build && changeset publish"
+    "size": "size-limit"
   },
   "devDependencies": {
     "@babel/cli": "7.18.9",

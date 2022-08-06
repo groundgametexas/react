@@ -1,16 +1,29 @@
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import babel from "rollup-plugin-babel";
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import { terser } from "rollup-plugin-terser";
 import visualizer from "rollup-plugin-visualizer";
+import postcss from "rollup-plugin-postcss";
 
 const extensions = [".js", ".jsx", ".ts", ".tsx"];
 
 const formats = ["esm", "umd", "cjs"];
 
 const plugins = [
-  babel({ extensions, exclude: "node_modules/**", runtimeHelpers: true }),
+  peerDepsExternal(),
   resolve({ extensions }),
+  postcss({
+    config: {
+      path: "./postcss.config.js",
+    },
+    extensions: [".css"],
+    minimize: true,
+    inject: {
+      insertAt: "top",
+    },
+  }),
+  babel({ extensions, exclude: "node_modules/**", runtimeHelpers: true }),
   commonjs(),
   terser(),
   visualizer({ sourcemap: true }),
@@ -25,7 +38,7 @@ export default [
       file: `dist/browser.${format}.js`,
       format,
       sourcemap: true,
-      name: "primer",
+      name: "ggtx",
       globals: {
         react: "React",
         "react-dom": "ReactDOM",

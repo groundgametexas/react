@@ -5,6 +5,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import { terser } from "rollup-plugin-terser";
 import visualizer from "rollup-plugin-visualizer";
 import postcss from "rollup-plugin-postcss";
+import tailwind from "rollup-plugin-tailwind";
 
 const extensions = [".js", ".jsx", ".ts", ".tsx"];
 

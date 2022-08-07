@@ -1,7 +1,5 @@
 import React from "react";
 
-import "./styles/tw.css";
-
 type ThingProps = {
   children: React.ReactNode;
 };

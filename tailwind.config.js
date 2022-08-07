@@ -2,11 +2,7 @@
 module.exports = {
   mode: "jit",
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./stories/*"],
-  content: [
-    "./src/**/*.{html,js,jsx,tsx}",
-    "./pages/**/*.{html,js}",
-    "./node_modules/@groundgametexas/react/**/*.js",
-  ],
+  content: ["./src/**/*.{html,js,jsx,tsx}", "./pages/**/*.{html,js}"],
   theme: {
     extend: {},
     colors: {

@@ -3,12 +3,21 @@ import type * as Stitches from "@stitches/react";
 
 import { Meta, Story } from "@storybook/react";
 import { Box } from "..";
+import {globalStyles} from '..'
 
 type BoxProps = ComponentProps<typeof Box>;
 
 export default {
   title: "Box",
   component: Box,
+  decorators: [
+    Story => {
+
+      return (
+        <Box>{Story()}</Box>
+      )
+    }
+  ],
   parameters: {
     controls: { expanded: true },
   },

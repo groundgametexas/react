@@ -1,5 +1,11 @@
 # @groundgametexas/react
 
+## 0.0.2
+
+### Patch Changes
+
+- [#4](https://github.com/groundgametexas/react/pull/4) [`62e8456`](https://github.com/groundgametexas/react/commit/62e8456a4b2d6c2e7e0c0fc92293c9e97c2928b0) Thanks [@TheeMattOliver](https://github.com/TheeMattOliver)! - tokenizes box component
+
 ## 0.0.1
 
 ### Patch Changes

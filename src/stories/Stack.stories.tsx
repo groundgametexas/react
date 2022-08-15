@@ -21,13 +21,25 @@ export const stack = (args: StackProps) => {
       width={args.width}
     >
       <div
-        style={{ backgroundColor: "tomato", width: "250px", height: "48px" }}
+        style={{
+          backgroundColor: "var(--background-accent-forest-green-bolder)",
+          width: "250px",
+          height: "48px",
+        }}
       />
       <div
-        style={{ backgroundColor: "tomato", width: "250px", height: "48px" }}
+        style={{
+          backgroundColor: "var(--background-accent-forest-green-bolder)",
+          width: "250px",
+          height: "48px",
+        }}
       />
       <div
-        style={{ backgroundColor: "tomato", width: "250px", height: "48px" }}
+        style={{
+          backgroundColor: "var(--background-accent-forest-green-bolder)",
+          width: "250px",
+          height: "48px",
+        }}
       />
     </Stack>
   );

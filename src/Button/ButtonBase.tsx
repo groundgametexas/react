@@ -2,7 +2,6 @@ import React, { ForwardedRef, useRef } from "react";
 import type * as Polymorphic from "@radix-ui/react-polymorphic";
 
 import { useButton } from "@react-aria/button";
-import { Primitive } from "@radix-ui/react-primitive";
 
 import { AriaButtonProps } from "@react-types/button";
 
@@ -15,9 +14,7 @@ export type ButtonBaseProps = {
   UNSAFE_className?: string;
   /** @deprecated Please use onPress instead*/
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  /**
-   * 
-   */
+  /** Mutable reference to an object, the DOM entity passed to a child component that is created by its parent component. Allows the child component to read and modify the element from any location where it is used. */
   forwardedRef?: ForwardedRef<ButtonBaseProps>;
   /** Whether the button is currently pressed.*/
   isPressed?: boolean
@@ -36,15 +33,8 @@ export type ButtonBaseProps = {
   type?: 'button' | 'submit' | 'reset'
 } & AriaButtonProps;
 
-const BUTTON_ROOT_NAME = "ButtonRoot";
-const BUTTON_ROOT_DEFAULT_TAG = "button";
-
-export type ButtonRootPrimitive = Polymorphic.ForwardRefComponent<
-  typeof BUTTON_ROOT_DEFAULT_TAG,
-  ButtonBaseProps
->;
 /**
- * `ButtonBase` is the base element that renders a `button`.
+ * `ButtonBase` is the base element that renders a semantic `button`.
  */
 export const ButtonBase = ({...props}: ButtonBaseProps) => {
   let ref = useRef(null);
@@ -58,20 +48,18 @@ export const ButtonBase = ({...props}: ButtonBaseProps) => {
   );
 };
 
-// return (
-//   <ButtonBase
-//     UNSAFE_className={UNSAFE_className}
-//     ref={ref}
-//     css={{
-//       borderRadius: "$3",
-//       backgroundColor: "var(--scale-forest-green-300)",
-//       "&:hover": {
-//         backgroundColor: "var(--scale-forest-green-700)",
-//         color: "white",
-//       },
-//     }}
-//   >
-//     {children}
-//   </ButtonBase>
-// );
-// };
+const BUTTON_BASE_NAME = "ButtonBase";
+const BUTTON_BASE_DEFAULT_TAG = "button";
+
+export type ButtonBasePrimitive = Polymorphic.ForwardRefComponent<
+  typeof BUTTON_BASE_DEFAULT_TAG,
+  ButtonBaseProps
+>;
+
+ButtonBase.displayName = "ButtonBase"
+
+
+
+export default {
+  ButtonBase: ButtonBase
+};

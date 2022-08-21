@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ComponentProps } from "react";
 
 interface AvatarBaseProps {}
 
@@ -7,3 +7,4 @@ const Avatar = ({ ...props }: AvatarBaseProps) => {
 };
 Avatar.displayName = "Avatar";
 export default Avatar;
+export type AvatarProps = ComponentProps<typeof Avatar>;

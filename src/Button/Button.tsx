@@ -17,21 +17,3 @@ const Button = ({ ...props }: ButtonBaseProps) => {
 
 export type ButtonProps = ComponentProps<typeof Button>;
 export default Button;
-
-// return (
-//   <ButtonBase
-//     UNSAFE_className={UNSAFE_className}
-//     ref={ref}
-//     css={{
-//       borderRadius: "$3",
-//       backgroundColor: "var(--scale-forest-green-300)",
-//       "&:hover": {
-//         backgroundColor: "var(--scale-forest-green-700)",
-//         color: "white",
-//       },
-//     }}
-//   >
-//     {children}
-//   </ButtonBase>
-// );
-// };

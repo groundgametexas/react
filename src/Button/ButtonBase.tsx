@@ -1,8 +1,8 @@
-import React, { ForwardedRef, useRef } from "react";
+import React, { ForwardedRef, useRef, HTMLAttributes, ComponentPropsWithRef } from "react";
 import type * as Polymorphic from "@radix-ui/react-polymorphic";
 
 import { useButton } from "@react-aria/button";
-
+import { useFocusRing } from "@react-aria/focus";
 import { AriaButtonProps } from "@react-types/button";
 
 export type ButtonBaseProps = {
@@ -31,22 +31,22 @@ export type ButtonBaseProps = {
    * @default 'button'
    */
   type?: 'button' | 'submit' | 'reset'
-} & AriaButtonProps;
+} & HTMLAttributes<HTMLButtonElement> & AriaButtonProps;
 
 /**
  * `ButtonBase` is the base element that renders a semantic `button`.
  */
-export const ButtonBase = ({...props}: ButtonBaseProps) => {
-  let ref = useRef(null);
+export const ButtonBase = React.forwardRef<ButtonBaseProps>(({...props}, forwardedRef): JSX.Element => {
+  // let ref = useRef(null);
 
-  let { buttonProps } = useButton(props, ref);
+  let { buttonProps } = useButton(props, forwardedRef);
 
   return (
-    <button {...buttonProps} ref={ref}>
+    <button {...buttonProps} ref={forwardedRef}>
       {props.children}
     </button>
   );
-};
+}) as Polymorphic.ForwardRefComponent<'button' | 'a', ButtonBaseProps>;
 
 const BUTTON_BASE_NAME = "ButtonBase";
 const BUTTON_BASE_DEFAULT_TAG = "button";
@@ -57,8 +57,6 @@ export type ButtonBasePrimitive = Polymorphic.ForwardRefComponent<
 >;
 
 ButtonBase.displayName = "ButtonBase"
-
-
 
 export default {
   ButtonBase: ButtonBase

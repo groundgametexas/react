@@ -19,9 +19,9 @@ export const popover = (args: PopoverProps) => {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <IconButton aria-label="Update dimensions">BTN</IconButton>
+        <IconButton aria-label="Update dimensions">Button</IconButton>
       </PopoverTrigger>
-      <PopoverContent sideOffset={5}>
+      <PopoverContent>
         <PopoverClose aria-label="Close">X</PopoverClose>
       </PopoverContent>
     </Popover>
@@ -33,7 +33,7 @@ const IconButton = styled("button", {
   fontFamily: "inherit",
   borderRadius: "8px",
   height: 44,
-  width: 44,
+  width: "fit-content",
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",

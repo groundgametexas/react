@@ -32,6 +32,7 @@ export const box = (args: BoxProps) => {
         color: args["color"],
         fontSize: 16,
         padding: 16,
+        borderRadius: args["borderRadius"]
       }}
       as={args["as"]}
     >
@@ -50,6 +51,29 @@ box.argTypes = {
     table: {
       defaultValue: {
         summary: '"div"',
+      },
+    },
+  },
+  borderRadius: {
+    type: {
+      name: "enum",
+      value: [
+        '$1',
+        '$2',
+        '$3',
+        '$4',
+        '$5',
+        '$6',
+        '$round'
+      ]
+    },
+    defaultValue: "$3",
+    control: {
+      type: "radio",
+    },
+    table: {
+      defaultValue: {
+        summary: '$3',
       },
     },
   },

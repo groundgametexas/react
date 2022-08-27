@@ -373,7 +373,10 @@ export const stitchesInstance = createStitches({
     radii: {
       1: "2px",
       2: "4px",
-      3: "8px",
+      3: "6px",
+      4: "8px",
+      5: "12px",
+      6: "16px",
       round: "9999px",
     },
     fontWeights: {},

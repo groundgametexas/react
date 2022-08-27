@@ -77,7 +77,7 @@ const StyledClose = styled(PopoverPrimitive.Close, {
   top: 5,
   right: 5,
 
-  "&:hover": { backgroundColor: "black" },
+  "&:hover": { backgroundColor: "#d1d1d1" },
   "&:focus": { boxShadow: `0 0 0 2px black` },
 });
 

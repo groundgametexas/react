@@ -53,20 +53,27 @@ const StyledButtonBase = styled(ButtonBase, {
     },
     variant: {
       primary: {
-        backgroundColor: '$backgroundAccentOrangeBolder',
-        color: '$textInverse',
+        backgroundColor: '$scaleOrange500',
+        color: '$scaleWhite',
+        '&:hover': {
+          background: '$scaleOrange700',
+        },
       },
       secondary: {
-        background: '$backgroundAccentTealBolder',
-        color: '$textCharcoalDefault',
+        background: '$scaleTeal500',
+        color: '$scaleCharcoal800',
+        '&:hover': {
+          background: '$scaleTeal700',
+        },
       },
       invisible: {
         background: 'transparent',
         padding: '$2 $3',
-        color: '$textCharcoalDefault',
+        color: '$scaleCharcoal800',
         '&:hover': {
           background: '$backgroundNeutralDefaultHovered',
         },
+        boxShadow: 'revert',
       },
     },
   },

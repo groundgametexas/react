@@ -28,6 +28,10 @@ export type ButtonBaseProps = {
   trailingVisual?: () => React.ReactNode;
   /** A helper rendered as a loading state. */
   loadingEnhancer?: () => React.ReactNode;
+  /** Button variant */
+  variant?: 'primary' | 'secondary' | 'invisible'
+  /** Size */
+  size?: 'small' | 'medium' | 'large'
 };
 
 /**

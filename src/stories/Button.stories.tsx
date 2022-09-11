@@ -16,7 +16,7 @@ export default {
 
 export const button = (args: ButtonProps) => {
   return (
-    <Button onClick={() => alert('Button pressed!')}>Hello world</Button>
+    <Button {...args} onClick={() => alert('Button pressed!')}>Hello world</Button>
   );
 };
 button.argTypes = {

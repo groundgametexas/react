@@ -6,6 +6,9 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   ref: string;
 }
 
+/**
+ * Input component
+ */
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ name, label, ...delegated }, ref) => {
     return (

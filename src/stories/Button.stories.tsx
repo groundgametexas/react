@@ -22,5 +22,6 @@ export const button = (args: ButtonProps) => {
 button.argTypes = {
 };
 button.args = {
+  size: 'medium'
 };
 button.storyName = "Button";

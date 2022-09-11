@@ -38,7 +38,7 @@ export type ButtonBaseProps = {
  * `ButtonBase` is the base element that renders a semantic `button`.
  */
 export const ButtonBase = React.forwardRef<HTMLButtonElement, ButtonBaseProps>(
-  ({ ...props }, forwardedRef) => {
+  ({ size='medium', ...props }, forwardedRef) => {
     return (
       <button {...props} ref={forwardedRef}>
         {props.children}

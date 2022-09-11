@@ -5,20 +5,23 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name?: string;
   label?: string;
   ref?: string;
+  placeholder?: string;
 }
 
 /**
  * Input component
  */
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ name, ...delegated }, ref) => {
+  ({ name, placeholder, ...delegated }, ref) => {
     return (
-      <StyledInput
-        {...delegated}
-        name={name}
-        ref={ref}
-        className={`text-base shadow-sm focus:ring-blue-500 focus:border-blue-500`}
-      />
+      <>
+        <StyledInput
+          {...delegated}
+          placeholder={placeholder}
+          name={name}
+          ref={ref}
+        />
+      </>
     );
   }
 );
@@ -26,13 +29,20 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 const StyledInput = styled("input", {
   display: "block",
   border: "1px solid",
-  borderColor: "$borderDefault",
+  borderColor: "$borderSubtle",
   width: "100%",
-  paddingTop: "$2",
-  paddingBottom: "$2",
+  padding: "$2",
   borderRadius: "$3",
   fontSize: "1rem",
-  lineHeight: "1.5rem",
+  lineHeight: "$default",
+  boxShadow: "0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgba(0,0,0,.05)",
+  "&:focus": {
+    border: "2px solid",
+    borderColor: "$scaleBlue700",
+  },
+  "&:placeholder": {
+    color: "$textSubtle",
+  },
 });
 
 export default Input;

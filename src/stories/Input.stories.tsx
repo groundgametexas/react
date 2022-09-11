@@ -16,11 +16,12 @@ export default {
 
 export const input = (args: InputProps) => {
   return (
-    <Input />
+    <Input {...args}/>
   );
 };
 input.argTypes = {
 };
 input.args = {
+  placeholder: 'Enter placeholder text...'
 };
 input.storyName = "Input";

@@ -3,4 +3,4 @@ export type VariantType =
   | "primary"
   | "secondary"
   | "danger"
-  | "outline";
+  | "invisible";

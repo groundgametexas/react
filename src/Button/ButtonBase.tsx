@@ -28,13 +28,17 @@ export type ButtonBaseProps = {
   trailingVisual?: () => React.ReactNode;
   /** A helper rendered as a loading state. */
   loadingEnhancer?: () => React.ReactNode;
+  /** Button variant */
+  variant?: 'primary' | 'secondary' | 'invisible'
+  /** Size */
+  size?: 'small' | 'medium' | 'large'
 };
 
 /**
  * `ButtonBase` is the base element that renders a semantic `button`.
  */
 export const ButtonBase = React.forwardRef<HTMLButtonElement, ButtonBaseProps>(
-  ({ ...props }, forwardedRef) => {
+  ({ size='medium', ...props }, forwardedRef) => {
     return (
       <button {...props} ref={forwardedRef}>
         {props.children}

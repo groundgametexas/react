@@ -388,7 +388,10 @@ export const stitchesInstance = createStitches({
       semibold: 600,
       bold: 700,
     },
-    lineHeights: {},
+    lineHeights: {
+      default: 1.5,
+      condensed: 1.333,
+    },
     letterSpacings: {},
     borderWidths: {},
     borderStyles: {},

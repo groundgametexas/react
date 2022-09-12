@@ -12,13 +12,14 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
  * Input component
  */
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ name, placeholder, ...delegated }, ref) => {
+  ({ name, label, placeholder, ...delegated }, ref) => {
     return (
       <>
         <StyledInput
           {...delegated}
-          placeholder={placeholder}
           name={name}
+          aria-label={label}
+          placeholder={placeholder}
           ref={ref}
         />
       </>

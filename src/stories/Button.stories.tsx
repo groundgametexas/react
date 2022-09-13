@@ -22,6 +22,20 @@ export const button = (args: ButtonProps) => {
 button.argTypes = {
 };
 button.args = {
-  size: 'medium'
+  size: 'medium',
+};
+button.storyName = "Button";
+
+
+export const buttonAsLink = (args: ButtonProps) => {
+  return (
+    <Button {...args} href="https://www.google.com">Google</Button>
+  );
+};
+button.argTypes = {};
+button.args = {
+  size: 'medium',
+  as: 'a',
+  variant: 'primary'
 };
 button.storyName = "Button";

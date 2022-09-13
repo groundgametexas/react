@@ -1,14 +1,11 @@
 import React, {
   ForwardedRef,
-  useRef,
-  HTMLAttributes,
-  ComponentPropsWithRef,
+  Component
 } from "react";
 import {Box} from '..'
 import type * as Polymorphic from "@radix-ui/react-polymorphic";
 
-
-export type ButtonBaseProps = {
+export interface ButtonBaseProps {
   /** The content to display in the button. */
   children?: React.ReactNode;
   /** Mutable reference to an object, the DOM entity passed to a child component that is created by its parent component. Allows the child component to read and modify the element from any location where it is used. */
@@ -32,17 +29,18 @@ export type ButtonBaseProps = {
   variant?: 'primary' | 'secondary' | 'invisible'
   /** Size */
   size?: 'small' | 'medium' | 'large'
-};
+} 
+
 
 /**
  * `ButtonBase` is the base element that renders a semantic `button`.
  */
 export const ButtonBase = React.forwardRef<HTMLButtonElement, ButtonBaseProps>(
-  ({ size='medium', ...props }, forwardedRef) => {
+  ({ size='medium',  ...props }, forwardedRef) => {
     return (
-      <button {...props} ref={forwardedRef}>
+      <button {...props as any} ref={forwardedRef}>
         {props.children}
-      </button>
+      </button>    
     );
   }
 );
@@ -89,7 +87,6 @@ export const ButtonContent = React.forwardRef((props, forwardedRef) => {
 }) as ButtonContentPrimitive;
 
 ButtonContent.displayName = BUTTON_CONTENT_NAME;
-
 
 /* -------------------------------------------------------------------------------------------------
  * ButtonLoadingContainer

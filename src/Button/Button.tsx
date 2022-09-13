@@ -22,8 +22,9 @@ const Button = ({ ...props }: ButtonBaseProps) => {
 
 const StyledButtonBase = styled(ButtonBase, {
   color: '$textDefault',
-  background: '$backgroundNeutralDefaultDefault', 
+  background: '$backgroundNeutralDefaultDefault',
   display: 'inline-flex',
+  borderColor: '',
   fontFamily: '$sans',
   border: '1px solid transparent',
   fontWeight: '$bold',
@@ -68,6 +69,7 @@ const StyledButtonBase = styled(ButtonBase, {
       invisible: {
         background: 'transparent',
         padding: '$2 $3',
+        borderColor: 'transparent',
         color: '$scaleCharcoal800',
         '&:hover': {
           background: '$backgroundNeutralDefaultHovered',

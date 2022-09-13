@@ -1,6 +1,6 @@
 {
   "name": "@groundgametexas/react",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Matt Oliver",
   "license": "MIT",
   "main": "lib/index.js",

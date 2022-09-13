@@ -1,5 +1,11 @@
 # @groundgametexas/react
 
+## 0.0.3
+
+### Patch Changes
+
+- [#11](https://github.com/groundgametexas/react/pull/11) [`6895a15`](https://github.com/groundgametexas/react/commit/6895a15447143e718a1de8cec97d3f0d8af47ebe) Thanks [@TheeMattOliver](https://github.com/TheeMattOliver)! - scaffold button, input, avatar components
+
 ## 0.0.2
 
 ### Patch Changes

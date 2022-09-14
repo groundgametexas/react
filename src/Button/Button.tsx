@@ -1,10 +1,7 @@
 import React, { ComponentProps } from "react";
-import type * as Stitches from '@stitches/react';
-import { createStitches } from '@stitches/react';
 
 import { ButtonBase, ButtonBaseProps } from "./ButtonBase";
 import { styled } from "../stitches.config";
-
 
 /**
  * Buttons consist of a clickable area usually containing a textual label or an icon that users can click to perform an action.
@@ -21,65 +18,64 @@ const Button = ({ ...props }: ButtonBaseProps) => {
 };
 
 const StyledButtonBase = styled(ButtonBase, {
-  color: '$textDefault',
-  background: '$backgroundNeutralDefaultDefault',
-  display: 'inline-flex',
-  borderColor: '',
-  fontFamily: '$sans',
-  border: '1px solid transparent',
-  fontWeight: '$bold',
-  boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
-  '&:focus': {
-    outlineColor: '$borderAccentOrange',
-    outlineOffset: '4px',
+  color: "$textDefault",
+  background: "$backgroundNeutralDefaultDefault",
+  display: "inline-flex",
+  borderColor: "",
+  fontFamily: "$sans",
+  border: "1px solid transparent",
+  fontWeight: "$bold",
+  boxShadow: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+  "&:focus": {
+    outlineColor: "$borderAccentOrange",
+    outlineOffset: "4px",
   },
   variants: {
     size: {
       small: {
-        fontSize: '$2',
-        padding: '7px 16px',
-        borderRadius: '$3',
+        fontSize: "$2",
+        padding: "7px 16px",
+        borderRadius: "$3",
       },
       medium: {
-        fontSize: '$3',
-        padding: '7px 16px',
-        borderRadius: '$3',
+        fontSize: "$3",
+        padding: "7px 16px",
+        borderRadius: "$3",
       },
       large: {
-        fontSize: '$4',
-        padding: '9px 20px',
-        borderRadius: '$3',
+        fontSize: "$4",
+        padding: "9px 20px",
+        borderRadius: "$3",
       },
     },
     variant: {
       primary: {
-        backgroundColor: '$scaleOrange500',
-        color: '$scaleWhite',
-        '&:hover': {
-          background: '$scaleOrange700',
+        backgroundColor: "$scaleOrange500",
+        color: "$scaleWhite",
+        "&:hover": {
+          background: "$scaleOrange700",
         },
       },
       secondary: {
-        background: '$scaleTeal500',
-        color: '$scaleCharcoal800',
-        '&:hover': {
-          background: '$scaleTeal700',
+        background: "$scaleTeal500",
+        color: "$scaleCharcoal800",
+        "&:hover": {
+          background: "$scaleTeal700",
         },
       },
       invisible: {
-        background: 'transparent',
-        padding: '$2 $3',
-        borderColor: 'transparent',
-        color: '$scaleCharcoal800',
-        '&:hover': {
-          background: '$backgroundNeutralDefaultHovered',
+        background: "transparent",
+        padding: "$2 $3",
+        borderColor: "transparent",
+        color: "$scaleCharcoal800",
+        "&:hover": {
+          background: "$backgroundNeutralDefaultHovered",
         },
-        boxShadow: 'revert',
+        boxShadow: "revert",
       },
     },
   },
-})
-
+});
 
 // const DefaultButton = styled(ButtonBase)`
 //   background-color: var(--color-gray100);
@@ -114,7 +110,6 @@ const StyledButtonBase = styled(ButtonBase, {
 //     color: var(--color-black);
 //   }
 // `
-
 
 export type ButtonProps = ComponentProps<typeof Button>;
 export default Button;

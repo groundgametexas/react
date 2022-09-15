@@ -3,6 +3,7 @@ import { styled } from "../stitches.config";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name?: string;
+  type?: "email" | "text";
   label?: string;
   ref?: string;
   placeholder?: string;
@@ -12,12 +13,13 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
  * Input component
  */
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ name, label, placeholder, ...delegated }, ref) => {
+  ({ name, label, type, placeholder, ...delegated }, ref) => {
     return (
       <>
         <StyledInput
           {...delegated}
           name={name}
+          type={type}
           aria-label={label}
           placeholder={placeholder}
           ref={ref}

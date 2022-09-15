@@ -29,6 +29,8 @@ export interface ButtonBaseProps {
   variant?: 'primary' | 'secondary' | 'invisible'
   /** Size */
   size?: 'small' | 'medium' | 'large'
+  /** Whether the button should be full width */
+  block?: boolean
 } 
 
 

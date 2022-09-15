@@ -1,6 +1,6 @@
 import React, { ComponentProps } from "react";
 
-import { ButtonBase, ButtonBaseProps } from "./ButtonBase";
+import { ButtonBase, ButtonContent, ButtonBaseProps } from "./ButtonBase";
 import { styled } from "../stitches.config";
 
 /**
@@ -14,7 +14,11 @@ import { styled } from "../stitches.config";
 const Button = ({ ...props }: ButtonBaseProps) => {
   let { children, ...additionalProps } = props;
 
-  return <StyledButtonBase {...additionalProps}>{children}</StyledButtonBase>;
+  return (
+    <StyledButtonBase {...additionalProps}>
+      <ButtonContent>{children}</ButtonContent>
+    </StyledButtonBase>
+  );
 };
 
 const StyledButtonBase = styled(ButtonBase, {
@@ -73,6 +77,29 @@ const StyledButtonBase = styled(ButtonBase, {
         },
         boxShadow: "revert",
       },
+    },
+    block: {
+      true: {
+        width: "100%",
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+      },
+      false: {
+        width: "revert",
+      },
+    },
+  },
+});
+
+const StyledButtonContent = styled(ButtonContent, {
+  block: {
+    true: {
+      width: "100%",
+      display: "inline-flex",
+    },
+    false: {
+      width: "revert",
     },
   },
 });

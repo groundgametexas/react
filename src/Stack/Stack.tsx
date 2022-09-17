@@ -1,6 +1,6 @@
 import React from "react";
 import type * as Stitches from "@stitches/react";
-import { styled } from "./stitches.config";
+import { styled } from "../stitches.config";
 
 const StyledStack = styled("div", {
   display: "flex",

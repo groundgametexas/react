@@ -5,6 +5,14 @@ import { styled, keyframes } from "@stitches/react";
 import { Meta, Story } from "@storybook/react";
 import { PopoverTrigger, Popover, PopoverContent, PopoverClose } from "..";
 
+const CloseButton = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  )
+}
+
 type PopoverProps = ComponentProps<typeof Popover>;
 
 export default {
@@ -19,10 +27,12 @@ export const popover = (args: PopoverProps) => {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <IconButton aria-label="Update dimensions">Button</IconButton>
+        <IconButton aria-label="Update dimensions">Open</IconButton>
       </PopoverTrigger>
       <PopoverContent>
-        <PopoverClose aria-label="Close">X</PopoverClose>
+        <PopoverClose aria-label="Close">
+          <CloseButton />
+        </PopoverClose>
       </PopoverContent>
     </Popover>
   );
@@ -30,18 +40,27 @@ export const popover = (args: PopoverProps) => {
 
 const IconButton = styled("button", {
   all: "unset",
-  fontFamily: "inherit",
-  borderRadius: "8px",
-  height: 44,
+  borderRadius: "$3",
+  padding: "$2",
+  height: 24,
   width: "fit-content",
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
-  color: "black",
-  backgroundColor: "white",
-  boxShadow: `0 0px 4px #3d3d3d2e`,
-  "&:hover": { backgroundColor: "#fafafa" },
-  "&:focus": { boxShadow: `0 0 0 2px #3d3d3d2e` },
+  color: "$textDefault",
+  background: "$backgroundNeutralDefaultDefault",
+  borderColor: "",
+  fontFamily: "$sans",
+  border: "1px solid transparent",
+  fontWeight: "$bold",
+  boxShadow: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+  "&:focus": {
+    outlineColor: "$borderAccentOrange",
+    outlineOffset: "4px",
+  },
+  "&:hover": {
+    background: "$backgroundNeutralDefaultHovered",
+  }
 });
 
 const Fieldset = styled("fieldset", {

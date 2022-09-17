@@ -1,5 +1,15 @@
 # @groundgametexas/react
 
+## 0.0.4
+
+### Patch Changes
+
+- [#13](https://github.com/groundgametexas/react/pull/13) [`c29f4c9`](https://github.com/groundgametexas/react/commit/c29f4c943de0496afb90d84f713f31a63e0a8a49) Thanks [@TheeMattOliver](https://github.com/TheeMattOliver)! - adds spinner component
+
+- [#13](https://github.com/groundgametexas/react/pull/13) [`3edd70c`](https://github.com/groundgametexas/react/commit/3edd70cea8f48faf60c4d60f29f78a9cc4af479c) Thanks [@TheeMattOliver](https://github.com/TheeMattOliver)! - adds full-width button variant
+
+- [#13](https://github.com/groundgametexas/react/pull/13) [`f832ca3`](https://github.com/groundgametexas/react/commit/f832ca3acd9f77e0e8cf01f6901ec1c65a07663f) Thanks [@TheeMattOliver](https://github.com/TheeMattOliver)! - adds visually hidden component, adds input props
+
 ## 0.0.3
 
 ### Patch Changes

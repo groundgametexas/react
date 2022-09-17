@@ -2,4 +2,4 @@
 "@groundgametexas/react": patch
 ---
 
-adds full-widthv button variant
+adds full-width button variant

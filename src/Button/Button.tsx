@@ -12,10 +12,10 @@ import { styled } from "../stitches.config";
  *
  */
 const Button = ({ ...props }: ButtonBaseProps) => {
-  let { children, ...additionalProps } = props;
+  let { children, size = "medium", ...additionalProps } = props;
 
   return (
-    <StyledButtonBase {...additionalProps}>
+    <StyledButtonBase size={size} {...additionalProps}>
       <ButtonContent>{children}</ButtonContent>
     </StyledButtonBase>
   );

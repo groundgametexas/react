@@ -9,7 +9,7 @@
 2. Install peer dependencies in your project
 
 ```
-yarn add -D tailwindcss postcss autoprefixer
+yarn add -D tailwindcss postcss autoprefixer react-hook-form
 ```
 
 3. Configure Tailwind

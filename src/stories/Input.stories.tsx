@@ -1,8 +1,8 @@
 import React, { ComponentProps } from "react";
-import type * as Stitches from "@stitches/react";
-
 import { Meta, Story } from "@storybook/react";
-import {Input, Label } from "..";
+import { useForm } from "react-hook-form";
+
+import { Input, Label, Button } from "..";
 
 type InputProps = ComponentProps<typeof Input>;
 type LabelProps = ComponentProps<typeof Label>;
@@ -16,32 +16,44 @@ export default {
 } as Meta;
 
 export const input = (args: InputProps) => {
-  return (
-    <Input {...args}/>
-  );
+  return <Input {...args} />;
 };
-input.argTypes = {
-};
+input.argTypes = {};
 input.args = {
-  placeholder: 'First name',
+  placeholder: "First name",
 };
 input.storyName = "Input";
 
+export type DemoFormFields = {
+  firstName: string;
+};
+
 export const form = (args: InputProps & LabelProps) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<DemoFormFields>();
+
+  const onSubmit = handleSubmit((data) => {
+    console.log("submitting data...");
+  });
+
   return (
     <>
-    <form>
-      <Label htmlFor={args.name}>First name</Label>
-      <Input type="text" name={args.name} {...args}/>
-    </form>
+      <form onSubmit={onSubmit}>
+        <Label htmlFor={args.name}>First name</Label>
+        <Input type="text" name={args.name} {...args} />
+        <Button type="submit" variant={`primary`}>
+          Submit
+        </Button>
+      </form>
     </>
-    
   );
 };
-form.argTypes = {
-};
+form.argTypes = {};
 form.args = {
-  placeholder: 'First name',
-  name: 'first-name'
+  placeholder: "First name",
+  name: "first-name",
 };
 form.storyName = "Form Input";

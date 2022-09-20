@@ -78,6 +78,7 @@
     "tailwindcss": "npm:@tailwindcss/postcss7-compat || ^3.1.8"
   },
   "dependencies": {
+    "@hookform/error-message": "^2.0.0",
     "@radix-ui/react-polymorphic": "^0.0.14",
     "@radix-ui/react-popover": "1.0.0",
     "@radix-ui/react-primitive": "^1.0.0",

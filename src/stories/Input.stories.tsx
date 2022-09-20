@@ -2,10 +2,11 @@ import React, { ComponentProps } from "react";
 import { Meta, Story } from "@storybook/react";
 import { useForm } from "react-hook-form";
 
-import { Input, Label, Button } from "..";
+import { Input, Label, Button, FormInput } from "..";
 
 type InputProps = ComponentProps<typeof Input>;
 type LabelProps = ComponentProps<typeof Label>;
+type FormInputProps = ComponentProps<typeof FormInput>;
 
 export default {
   title: "Input",
@@ -28,7 +29,7 @@ export type DemoFormFields = {
   firstName: string;
 };
 
-export const form = (args: InputProps & LabelProps) => {
+export const form = (args: FormInputProps & LabelProps & DemoFormFields) => {
   const {
     register,
     handleSubmit,
@@ -43,7 +44,14 @@ export const form = (args: InputProps & LabelProps) => {
     <>
       <form onSubmit={onSubmit}>
         <Label htmlFor={args.name}>First name</Label>
-        <Input type="text" name={args.name} {...args} />
+        <FormInput<DemoFormFields>
+          type="text"
+          name="firstName"
+          id={`firstName`}
+          placeholder={`First name`}
+          register={register}
+          rules={{ required: "First name is a required field" }}
+        />
         <Button type="submit" variant={`primary`}>
           Submit
         </Button>
@@ -52,8 +60,5 @@ export const form = (args: InputProps & LabelProps) => {
   );
 };
 form.argTypes = {};
-form.args = {
-  placeholder: "First name",
-  name: "first-name",
-};
+form.args = {};
 form.storyName = "Form Input";

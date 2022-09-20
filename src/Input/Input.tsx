@@ -1,7 +1,7 @@
-import React, { ForwardRefRenderFunction, InputHTMLAttributes } from "react";
+import React, { InputHTMLAttributes, ComponentProps } from "react";
 import { styled } from "../stitches.config";
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface InputBaseProps extends InputHTMLAttributes<HTMLInputElement> {
   name?: string;
   type?: "email" | "text";
   label?: string;
@@ -13,7 +13,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 /**
  * Input component
  */
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
+const Input = React.forwardRef<HTMLInputElement, InputBaseProps>(
   (
     { name, label, type, size, UNSAFE_className, placeholder, ...delegated },
     ref
@@ -67,3 +67,4 @@ const StyledInput = styled("input", {
 });
 
 export default Input;
+export type InputProps = ComponentProps<typeof Input>;

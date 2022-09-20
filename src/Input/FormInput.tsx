@@ -7,6 +7,10 @@ import {
   DeepMap,
   FieldError,
 } from "react-hook-form";
+import { ErrorMessage } from "@hookform/error-message";
+
+import get from "lodash.get";
+
 import { Input, InputProps } from "..";
 
 // <TFormValues> is a generic type that represents any potential form
@@ -22,19 +26,38 @@ export type FormInputProps<TFormValues extends FieldValues> = {
 } & Omit<InputProps, "name">;
 
 /**
- * Wrapper component that uses Input and react-hook-form to create a reusable component
- * that can be passed any validation rules and any potential errors
+ * FormInput is a wrapper component that uses Input and react-hook-form to create a reusable component
+ * that can be passed any validation rules and potential errors
  */
 export const FormInput = <TFormValues extends Record<string, unknown>>({
   UNSAFE_className,
   name,
   register,
   rules,
+  errors,
   ...props
 }: FormInputProps<TFormValues>): JSX.Element => {
+  // If the name is in a FieldArray, it will be 'fields.index.fieldName' and errors[name] won't return anything, so we are using lodash get
+  const errorMessages = get(errors, name);
+  const hasError = !!(errors && errorMessages);
   return (
     <div className={UNSAFE_className} aria-live="polite">
-      <Input name={name} {...props} {...(register && register(name, rules))} />
+      <Input
+        name={name}
+        aria-invalid={hasError}
+        {...props}
+        {...(register && register(name, rules))}
+      />
+      <ErrorMessage
+        errors={errors}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        name={name as any}
+        render={({ message }) => (
+          <p className="mt-1 font-serif text-sm text-left block text-red-600">
+            {message}
+          </p>
+        )}
+      />
     </div>
   );
 };

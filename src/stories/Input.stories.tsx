@@ -51,6 +51,7 @@ export const form = (args: FormInputProps & LabelProps & DemoFormFields) => {
           placeholder={`First name`}
           register={register}
           rules={{ required: "First name is a required field" }}
+          errors={errors}
         />
         <Button type="submit" variant={`primary`}>
           Submit

@@ -1,4 +1,6 @@
-import React from "react";
+import React, { ComponentProps } from "react";
+import classNames from "classnames";
+
 import {
   RegisterOptions,
   UseFormRegister,
@@ -7,14 +9,14 @@ import {
   DeepMap,
   FieldError,
 } from "react-hook-form";
-import { ErrorMessage } from "@hookform/error-message";
 
+import { ErrorMessage } from "@hookform/error-message";
 import get from "lodash.get";
 
 import { Input, InputProps } from "..";
 
 // <TFormValues> is a generic type that represents any potential form
-export type FormInputProps<TFormValues extends FieldValues> = {
+type FormInputBaseProps<TFormValues extends FieldValues> = {
   /** The name of one of the fields in a form. Of type Path in order to access the fields of any nested object or array. Tells react-hook-form which input/field in the form we are trying to register. */
   name: Path<TFormValues>;
   /** Validation rules to pass into the register function for react-hook-form. */
@@ -29,22 +31,27 @@ export type FormInputProps<TFormValues extends FieldValues> = {
  * FormInput is a wrapper component that uses Input and react-hook-form to create a reusable component
  * that can be passed any validation rules and potential errors
  */
-export const FormInput = <TFormValues extends Record<string, unknown>>({
+const FormInput = <TFormValues extends Record<string, unknown>>({
   UNSAFE_className,
   name,
   register,
   rules,
   errors,
   ...props
-}: FormInputProps<TFormValues>): JSX.Element => {
+}: FormInputBaseProps<TFormValues>): JSX.Element => {
   // If the name is in a FieldArray, it will be 'fields.index.fieldName' and errors[name] won't return anything, so we are using lodash get
   const errorMessages = get(errors, name);
   const hasError = !!(errors && errorMessages);
+  console.log("errorMessages: ", errorMessages);
+  console.log("hasError: ", hasError);
   return (
     <div className={UNSAFE_className} aria-live="polite">
       <Input
         name={name}
         aria-invalid={hasError}
+        UNSAFE_className={classNames({
+          "transition-colors focus:outline-none focus:ring-2 focus:ring-opacity-50 border-red-600 hover:border-red-600 focus:border-red-600 focus:ring-red-600": hasError,
+        })}
         {...props}
         {...(register && register(name, rules))}
       />
@@ -52,12 +59,17 @@ export const FormInput = <TFormValues extends Record<string, unknown>>({
         errors={errors}
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         name={name as any}
-        render={({ message }) => (
-          <p className="mt-1 font-serif text-sm text-left block text-red-600">
-            {message}
-          </p>
-        )}
+        render={({ message }) => {
+          console.log("message: ", message);
+          return (
+            <p className="mt-1 font-serif text-sm text-left block text-red-600">
+              {message}
+            </p>
+          );
+        }}
       />
     </div>
   );
 };
+export default FormInput;
+export type FormInputProps = ComponentProps<typeof FormInput>;

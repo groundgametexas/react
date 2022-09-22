@@ -5,7 +5,8 @@ export { default as Button } from "./Button";
 
 export { default as Input } from "./Input";
 export type {InputProps} from './Input'
-export {FormInput} from './Input'
+export {default as FormInput} from './FormInput'
+export type {FormInputProps} from './FormInput'
 
 export { default as Label } from "./Label";
 export { default as Spinner } from "./Spinner";

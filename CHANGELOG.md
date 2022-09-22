@@ -1,5 +1,11 @@
 # @groundgametexas/react
 
+## 0.0.5
+
+### Patch Changes
+
+- [#15](https://github.com/groundgametexas/react/pull/15) [`e704d4b`](https://github.com/groundgametexas/react/commit/e704d4b0b7915c243a38c73f4374beaab38e4a44) Thanks [@TheeMattOliver](https://github.com/TheeMattOliver)! - creates react-hook-form generic form input component with error logic and validation rules
+
 ## 0.0.4
 
 ### Patch Changes
